@@ -1,4 +1,4 @@
-sample-scala-maven-project
-==========================
+sample-maven-project
+====================
 
-Startup Scala with Maven Project
+Basic Sample Maven Project
