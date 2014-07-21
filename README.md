@@ -1,4 +1,4 @@
-sample-maven-project
+sample-scala-maven-project
 ====================
 
-Basic Sample Maven Project
+Sample Scala Project with Maven

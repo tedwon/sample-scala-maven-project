@@ -15,10 +15,35 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <output.encoding>UTF-8</output.encoding>
         <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+        <scala.version>2.11.1</scala.version>
+        <scalatest.version>2.2.0</scalatest.version>
+        <maven.scala.plugin.version>3.1.6</maven.scala.plugin.version>
     </properties>
-	
+
     <build>
         <plugins>
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>${maven.scala.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>scala-compile-first</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>scala-test-compile</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -28,10 +53,10 @@
                     <target>8</target>
                     <compilerVersion>8</compilerVersion>
                     <encoding>UTF-8</encoding>
-					<showDeprecation>true</showDeprecation>
-					                        <showWarnings>true</showWarnings>
-					                        <optimize>true</optimize>
-					                        <debug>true</debug>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                    <optimize>true</optimize>
+                    <debug>true</debug>
                 </configuration>
             </plugin>
             <plugin>
@@ -48,9 +73,19 @@
                 </executions>
             </plugin>
         </plugins>
-    </build>	
+    </build>
 
     <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_2.11</artifactId>
+            <version>${scalatest.version}</version>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -65,7 +100,7 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.7</version>
-        </dependency>		
+        </dependency>
     </dependencies>
 
     <organization>
