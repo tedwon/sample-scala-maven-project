@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.realtimecep</groupId>
-    <artifactId>scala-maven</artifactId>
+    <artifactId>scala-maven-template</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>scala-maven-project</name>
+    <name>scala-maven-template</name>
     <url>http://tedwon.atlassian.net</url>
     <inceptionYear>2014</inceptionYear>
 
