@@ -1,4 +1,4 @@
-sample-scala-maven-project
+scala-maven-template
 ====================
 
-Sample Scala Project with Maven
+Start a Scala Maven project with this template
